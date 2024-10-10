@@ -140,23 +140,28 @@
       const modalImg = document.getElementById('imagen-modal');
       const cerrar = document.getElementById('cerrar');
       const imgElements = document.querySelectorAll('.modal-img');
+      const flipbook = document.querySelector('.flipbook');
+      console.log(flipbook);
 
       imgElements.forEach(img => {
         img.onclick = function () {
           modal.style.display = "flex"; // Muestra el modal
           modalImg.src = this.src; // Pone la misma imagen en el modal
+          flipbook.style.display = "none";
         }
       });
 
       // Al hacer clic en la "X", se cierra el modal
       cerrar.onclick = function () {
         modal.style.display = "none"; // Oculta el modal
+        flipbook.style.display = "block";
       }
 
       // Cierra el modal si se hace clic fuera de la imagen
       modal.onclick = function (event) {
         if (event.target === modal) {
           modal.style.display = "none"; // Oculta el modal
+          flipbook.style.display = "block";
         }
       }
     }
