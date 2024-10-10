@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    width: 100vw;
+	overflow: hidden;
+	background: #77CDFF;
+}
+
+.flipbook {
+    width: 1000px;
+    height: 600px;
+}
+
+.flipbook .hard {
+    background: #F95454 !important;
+    color: #fff;
+    font-weight: bold;
+    border: none; 
+}
+
+.flipbook .hard small{
+	font-style: italic;
+	font-weight: lighter;
+	opacity: 0.7;
+	font-size: 14px;
+}
+
+.flipbook .page {
+    background: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+}
+
+.page img{
+	width: 70%;
+	object-fit: cover;
+	margin: auto;
+}
+
+.flipbook .page small{
+	font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.portada-title{
+    text-align: center;
+    font-size: 25px;
+}
+.Intro-title{
+    font-size: 20px;
+}
+.Intro-text{
+    margin: 20px;
+    font-size: 13px;
+}
+.Intro-small{
+    font-size: 10px !important;
+}
+.slowly-container{
+    display: flex !important;
+    flex-direction: row;
+
+}
+.slowly-img{
+    width: 35% !important; 
+}
+.slowly-text{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
+.slowly-small-text{
+    font-size: 10px;
+}
+
+.video-val{
+    width: 50%;
+}
+.video-text{
+    text-align: center;
+    font-size: 35px;
+    padding: 20px;
+}
+
+.fin-text{
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.zoom {
+    width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+}
+
+ /* Estilos del modal */
+ .modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+/* Estilo de la imagen dentro del modal */
+.modal-content {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    animation: zoomIn 0.5s ease; /* Animación suave de zoom */
+}
+
+/* Animación para el efecto de zoom */
+@keyframes zoomIn {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}

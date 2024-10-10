@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>❤️ Regalo para Val 🥳</title>
+  <link rel="icon" href="img/gift.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div class="flipbook">
+
+    <div class="hard">
+      <p class="portada-title">
+        Un gran Regalo para la más HiperSuperDuperMegFantabulastica de todas 🥳
+      </p>
+      <br><br><br><br>
+      <small>~ de Sebas para Val con cariño ❤️</small>
+    </div>
+
+    <div class="hard"></div>
+
+    <div>
+      <p class="Intro-title">Intro</p>
+      <p class="Intro-text">
+        Este es un regalo con todo el cariño del mundo para una persona maravillosa sin igual.
+        <br><br>
+        Muchas gracias por estar en mi vida, Val, en serio eres una persona fantástica,
+        y desde que te conocí me impactaste por ser alguien tan... tan..., jajajaja,
+        la verdad no sé cómo expresarlo en palabras, pero en serio desde el inicio supe
+        que quería ser amigo tuyo porque definitivamente quería que fueras parte de mi vida
+        para poder experimentar todas esas alegrías que me has hecho vivir. Cada que recibo
+        un mensajito tuyo el día se me ilumina sin importar nada más. Aunque no te haga justicia
+        en realidad, creo que solo puedo definirte como que eres Luz: una luz que cambia,
+        que ilumina más o ilumina menos, en todo tipo de colores, pero siempre ilumina.
+        <br><br>
+        ¡Feliz cumpleaños! Y como siempre, te deseo lo mejor.
+        <br><br>
+        <small class="Intro-small">Nota: Para pasar de página dale click en la parte inferior de las hojas</small>
+      </p>
+    </div>
+
+    <div>
+      <div class="slowly-container">
+        <img class="slowly-img zoom modal-img" src="img/Slowly Sebas.jpg" alt="Sebas" />
+        <img class="slowly-img zoom modal-img" src="img/Slowly Val.jpg" alt="Val" />
+      </div>
+    </div>
+
+    <div>
+      <p class="slowly-text">
+        Nuestras primeras cartas
+        <br><br>
+        Recuerdo que me gustó mucho que hicieras muchas preguntas, jajaja.
+        <br><br>
+        No recordaba que no te gustaba el jengibre 😱, jajaja, aunque creo que yo ni lo he probado.
+        <br><br>
+        Tampoco recordaba tu Nickname de Slowly jajaja, era gracioso y si pense que te llambas Lola xD
+      </p>
+      <br><br><br><br>
+      <small class="slowly-small-text">
+        Nota: Dale clic a las imágenes si quieres agrandarlas :3
+      </small>
+    </div>
+
+    <div>
+      <video controls paused class="video-val">
+        <source src="img/video val.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+      </video>
+    </div>
+
+    <div>
+      <p class="video-text">
+        Ahora un video todo penoso 🙈
+        <br><br>
+        En honor a todas las veces que me enviaste videos, para hacerme reir y darme animos ❤️
+      </p>
+    </div>
+
+    <div>
+      <img class="zoom modal-img" src="img/regalo val 2023.jpg" alt="" />
+      <img class="zoom modal-img" src="img/vale para val.jpg" alt="" />
+    </div>
+
+    <div>
+      <img class="zoom modal-img" src="img/Vale para val 2.png" alt="" />
+      <p class="slowly-text">
+        Para recordar, estos son tus regalitos del año pasado, y por cumplir un año de eso
+        agrego otro para reclamar una fiesta de cumpleaños cuando quieras!!!!!!.
+        <br><br><br><br>
+        <small class="slowly-small-text">
+          Nota: Se puede reclamar cualquier día del año sin importar si es o no tu cumpleaños.
+        </small>
+      </p>
+
+    </div>
+
+    <div>
+      <img src="img/img.png" class="zoom modal-img" alt="" />
+
+      <p class="fin-text">
+        Para finalizar, y recordando nuestro súper club de lectura, una imagen "pixel art"
+        generada con ayuda de IA y un par de retoques míos, jejeje, de cómo te verías tú si fueras Nightwielder.
+        <br><br>
+        Y este es tu pequeño regalito de cumpleaños, no es mucho, pero espero al menos sacarte una pequeña sonrisa, Te envío un gran abrazo y, en serio, mil gracias por tu amistad.
+      </p>
+    </div>
+
+    <div class="hard"></div>
+
+    <div class="hard"></div>
+
+  </div>
+
+  <div id="modal" class="modal">
+    <span id="cerrar"
+      style="color: white; font-size: 30px; position: absolute; top: 10px; right: 20px; cursor: pointer;">&times;</span>
+    <img class="modal-content" id="imagen-modal">
+  </div>
+
+  <script src="jquery.js"></script>
+  <script src="turn.js"></script>
+  <!-- Script para Turn.js -->
+  <script>
+    $(document).ready(function () {
+      $(".flipbook").turn();
+
+      // Aquí puedes añadir cualquier otra inicialización relacionada con Turn.js si es necesario
+    });
+  </script>
+
+  <!-- Script para el Modal -->
+  <script>
+    function initModal() {
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('imagen-modal');
+      const cerrar = document.getElementById('cerrar');
+      const imgElements = document.querySelectorAll('.modal-img');
+
+      imgElements.forEach(img => {
+        img.onclick = function () {
+          modal.style.display = "flex"; // Muestra el modal
+          modalImg.src = this.src; // Pone la misma imagen en el modal
+        }
+      });
+
+      // Al hacer clic en la "X", se cierra el modal
+      cerrar.onclick = function () {
+        modal.style.display = "none"; // Oculta el modal
+      }
+
+      // Cierra el modal si se hace clic fuera de la imagen
+      modal.onclick = function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none"; // Oculta el modal
+        }
+      }
+    }
+
+    // Escuchar el evento 'turned' de Turn.js para actualizar el modal
+    $(".flipbook").on("turned", function () {
+      initModal(); // Re-inicializa el modal en cada cambio de página
+    });
+
+    // Esperar a que el DOM esté completamente cargado para inicializar el modal
+    document.addEventListener("DOMContentLoaded", initModal);
+  </script>
+
+</body>
+
+</html>
