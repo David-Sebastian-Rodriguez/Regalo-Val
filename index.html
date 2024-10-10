@@ -170,6 +170,39 @@
     document.addEventListener("DOMContentLoaded", initModal);
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Función para detectar si el dispositivo es móvil
+      function isMobileDevice() {
+        return window.innerWidth <= 768; // Ancho típico para dispositivos móviles
+      }
+
+      // Función para calcular y aplicar el valor de 'right' a la clase flipbook
+      function adjustFlipbookForMobile() {
+        if (isMobileDevice()) {
+          const flipbook = document.querySelector('.flipbook');
+          if (flipbook) {
+            // Calcula el valor de 'right'
+            const pageWidth = window.screen.width; // Obtiene el ancho de la página del flipbook
+            const rightValue = (pageWidth / 2) - 500;
+
+            console.log(pageWidth);
+            console.log(rightValue);
+
+            // Aplica el valor de 'right' como estilo en línea
+            flipbook.style.right = `${rightValue}px`;
+          }
+        }
+      }
+
+      // Ejecuta la función al cargar la página
+      adjustFlipbookForMobile();
+
+      // Opcional: Vuelve a ejecutar la función cuando la ventana cambia de tamaño
+      window.addEventListener('resize', adjustFlipbookForMobile);
+    });
+  </script>
+
 </body>
 
 </html>
